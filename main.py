@@ -14,6 +14,33 @@ hrac3_domcek = ["x","y","c","v"]
 hrac4_domcek = ["1","2","3","4"]
 
 
+
+def nova_hra(plocha, hrac1, hrac2, hrac3, hrac4, hrac1_domcek, hrac2_domcek, hrac3_domcek, hrac4_domcek):
+    print("Pre novú hru stlačte 1, pre vypnutie stlačte 0.")
+    novahra = input()
+    if novahra == "1":
+        plocha = ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O",
+                  "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"]
+
+        hrac1 = ["O", "O", "O", "O"]
+        hrac2 = ["O", "O", "O", "O"]
+        hrac3 = ["O", "O", "O", "O"]
+        hrac4 = ["O", "O", "O", "O"]
+
+        hrac1_domcek = ["đ", "Đ", "ł", "Ł"]
+        hrac2_domcek = ["€", "$", "#", "&"]
+        hrac3_domcek = ["x", "y", "c", "v"]
+        hrac4_domcek = ["1", "2", "3", "4"]
+        hracia_plocha(plocha, hrac1, hrac2, hrac3, hrac4, hrac1_domcek, hrac2_domcek, hrac3_domcek, hrac4_domcek)
+        hrac1_pohyb(plocha, hrac1, hrac2, hrac3, hrac4, hrac1_domcek, hrac2_domcek, hrac3_domcek, hrac4_domcek)
+    elif novahra == "0":
+        quit()
+    else:
+        nova_hra(plocha, hrac1, hrac2, hrac3, hrac4, hrac1_domcek, hrac2_domcek, hrac3_domcek, hrac4_domcek)
+
+
+
+
 def hracia_plocha(plocha, hrac1, hrac2, hrac3, hrac4, hrac1_domcek, hrac2_domcek, hrac3_domcek, hrac4_domcek):
     print(" ",hrac1_domcek[0],hrac1_domcek[1]," "," ",plocha[38],plocha[39],plocha[0]," "," ",hrac2_domcek[0],hrac2_domcek[1])
     print(" ", hrac1_domcek[2], hrac1_domcek[3], " ", " ",plocha[37],hrac1[0], plocha[1], " ", " ", hrac2_domcek[2],
@@ -962,6 +989,4 @@ def hrac4_pohyb(plocha, hrac1, hrac2, hrac3, hrac4, hrac1_domcek, hrac2_domcek, 
         hrac4_vyber(hod, plocha, hrac1, hrac2, hrac3, hrac4, hrac1_domcek, hrac2_domcek, hrac3_domcek, hrac4_domcek)
 
 
-print(len(plocha))
-hracia_plocha(plocha, hrac1, hrac2, hrac3, hrac4, hrac1_domcek, hrac2_domcek, hrac3_domcek, hrac4_domcek)
-hrac1_pohyb(plocha, hrac1, hrac2, hrac3, hrac4, hrac1_domcek, hrac2_domcek, hrac3_domcek, hrac4_domcek)
+nova_hra(plocha, hrac1, hrac2, hrac3, hrac4, hrac1_domcek, hrac2_domcek, hrac3_domcek, hrac4_domcek)
